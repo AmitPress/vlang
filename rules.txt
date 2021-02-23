@@ -1,0 +1,28 @@
+1. parameters must be mutable to get changed.
+2. mutable parameters are only allowed for arrays, interfaces, maps, pointers and structs.
+3. mutable argument has to be passed for mutable parameters.
+4. arrays are homogeneous meaning all elements are of same type
+5. array can be returned from a function and you need to specify the return type.
+6. `map()` and `filter()` takes `it` as parameter and returns array and in which it is applied is unchanged.
+7. `it` refers to every element of an array
+8. arrays need to declared as `mut` for making changes into it.
+9 `isnill()` can be used for detecting if a function nil or not.
+10. Sum types can be used to get different data types as a return value of a function.
+11. We can wrap some data type with another data type which will be called sum type like `type Summed = int | f64` then 
+    we can use it as a return type like `fn arbi_func(a int) Sumed {...}`
+12. When it comes to unwrapping the sum type, we can do it by using `match` or `if` ( `match` is preferred)
+    like `x := arbi_func(2) // will return `Sumed(4.2)`
+        mut v := f64(0)
+        match x {
+        int {
+            v = x + 20
+        }
+        f64 {
+            v = x + 4.5
+        }
+    }`
+13. Or we can use `if` like `if x is f64 {
+                               v = x + 84.1 
+                            }
+14. the `x` variable that stores the `Sumed(4.2)` can't be `mut`.
+15. Sum type must be start with a capital letter.
