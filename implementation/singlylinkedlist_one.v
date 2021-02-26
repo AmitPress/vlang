@@ -8,7 +8,7 @@ mut:
 
 struct Sll {
 mut:
-	init int = 1
+	init int
 	ids []int
 	size int
 	head &Node = 0
@@ -19,6 +19,7 @@ fn (s Sll)showinit(){
 }
 
 fn (mut s Sll) push_back(dt int) {
+	s.init++
 	// make a node by the given data
 	dt_node := &Node{
 		id: s.init
@@ -34,7 +35,6 @@ fn (mut s Sll) push_back(dt int) {
 		ptr.next = dt_node
 	}
 	s.ids << s.init
-	s.init++
 }
 /*
 Node{
